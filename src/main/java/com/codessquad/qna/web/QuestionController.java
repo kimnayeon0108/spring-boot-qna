@@ -3,11 +3,14 @@ package com.codessquad.qna.web;
 import com.codessquad.qna.domain.Question;
 import com.codessquad.qna.domain.User;
 import com.codessquad.qna.service.QuestionService;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+
+import java.util.List;
 
 import static com.codessquad.qna.web.HttpSessionUtils.*;
 
@@ -23,7 +26,10 @@ public class QuestionController {
 
     @GetMapping
     public String list(Model model) {
-        model.addAttribute("questions", questionService.getQuestionList());
+        Page<Question> page = questionService.getQuestionList();
+        int totalPages = page.getTotalPages();
+        List<Question> questions = page.getContent();
+        model.addAttribute("questions", questions);
         return "index";
     }
 

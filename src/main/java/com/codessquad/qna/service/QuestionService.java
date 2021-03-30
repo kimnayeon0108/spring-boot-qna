@@ -5,6 +5,9 @@ import com.codessquad.qna.domain.User;
 import com.codessquad.qna.exception.IllegalAccessToQuestionException;
 import com.codessquad.qna.exception.NotFoundException;
 import com.codessquad.qna.repository.QuestionRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,8 +25,9 @@ public class QuestionService {
         questionRepository.save(question);
     }
 
-    public List<Question> getQuestionList() {
-        return questionRepository.findAll();
+    public Page<Question> getQuestionList() {
+        Pageable pageable = PageRequest.of(0, 5);
+        return questionRepository.findAll(pageable);
     }
 
     public Question findQuestion(Long id) {
