@@ -1,5 +1,6 @@
 package com.codessquad.qna.service;
 
+import com.codessquad.qna.PageManager;
 import com.codessquad.qna.domain.Question;
 import com.codessquad.qna.domain.User;
 import com.codessquad.qna.exception.IllegalAccessToQuestionException;
@@ -25,9 +26,14 @@ public class QuestionService {
         questionRepository.save(question);
     }
 
-    public Page<Question> getQuestionList() {
-        Pageable pageable = PageRequest.of(0, 5);
+    public Page<Question> getQuestionList(int pageNumber) {
+        Pageable pageable = PageRequest.of(pageNumber - 1, getTotalPageCount());
+        PageManager.add(pageable);
         return questionRepository.findAll(pageable);
+    }
+
+    private int getTotalPageCount() {
+        return PageManager.getPageCount((int) questionRepository.count());
     }
 
     public Question findQuestion(Long id) {

@@ -13,3 +13,10 @@ INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted,
 INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted, post_time, updated_post_time) VALUES (10, 2, 'post10', 'post1', 0, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted, post_time, updated_post_time) VALUES (11, 2, 'post11', 'post1', 0, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted, post_time, updated_post_time) VALUES (12, 2, 'post12', 'post1', 0, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted, post_time, updated_post_time) VALUES (13, 2, 'post13', 'post1', 0, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted, post_time, updated_post_time) VALUES (14, 2, 'post14', 'post1', 0, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted, post_time, updated_post_time) VALUES (15, 2, 'post15', 'post1', 0, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted, post_time, updated_post_time) VALUES (16, 2, 'post16', 'post1', 0, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted, post_time, updated_post_time) VALUES (17, 2, 'post17', 'post1', 0, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted, post_time, updated_post_time) VALUES (18, 2, 'post18', 'post1', 0, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted, post_time, updated_post_time) VALUES (19, 2, 'post19', 'post1', 0, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);

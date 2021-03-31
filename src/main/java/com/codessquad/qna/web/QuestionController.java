@@ -1,5 +1,6 @@
 package com.codessquad.qna.web;
 
+import com.codessquad.qna.PageManager;
 import com.codessquad.qna.domain.Question;
 import com.codessquad.qna.domain.User;
 import com.codessquad.qna.service.QuestionService;
@@ -26,10 +27,15 @@ public class QuestionController {
 
     @GetMapping
     public String list(Model model) {
-        Page<Question> page = questionService.getQuestionList();
-        int totalPages = page.getTotalPages();
-        List<Question> questions = page.getContent();
-        model.addAttribute("questions", questions);
+        return listByPage(model, 1);
+    }
+
+    @GetMapping("/page/{pageNumber}")
+    public String listByPage(Model model, @PathVariable("pageNumber") int currentPage) {
+        Page<Question> page = questionService.getQuestionList(currentPage);
+        List<Question> pageContents = page.getContent();
+        model.addAttribute("questions", pageContents);
+        model.addAttribute("pages", PageManager.getPages());
         return "index";
     }
 
