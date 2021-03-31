@@ -11,8 +11,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class QuestionService {
 
@@ -27,13 +25,8 @@ public class QuestionService {
     }
 
     public Page<Question> getQuestionList(int pageNumber) {
-        Pageable pageable = PageRequest.of(pageNumber - 1, getTotalPageCount());
-        PageManager.add(pageable);
+        Pageable pageable = PageRequest.of(pageNumber - 1, 5);
         return questionRepository.findAll(pageable);
-    }
-
-    private int getTotalPageCount() {
-        return PageManager.getPageCount((int) questionRepository.count());
     }
 
     public Question findQuestion(Long id) {

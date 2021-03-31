@@ -20,3 +20,14 @@ INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted,
 INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted, post_time, updated_post_time) VALUES (17, 2, 'post17', 'post1', 0, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted, post_time, updated_post_time) VALUES (18, 2, 'post18', 'post1', 0, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted, post_time, updated_post_time) VALUES (19, 2, 'post19', 'post1', 0, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted, post_time, updated_post_time) VALUES (20, 2, 'post20', 'post1', 0, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted, post_time, updated_post_time) VALUES (21, 2, 'post21', 'post1', 0, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted, post_time, updated_post_time) VALUES (22, 2, 'post22', 'post1', 0, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted, post_time, updated_post_time) VALUES (23, 2, 'post23', 'post1', 0, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted, post_time, updated_post_time) VALUES (24, 2, 'post24', 'post1', 0, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted, post_time, updated_post_time) VALUES (25, 2, 'post19', 'post1', 0, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted, post_time, updated_post_time) VALUES (26, 2, 'post20', 'post1', 0, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted, post_time, updated_post_time) VALUES (27, 2, 'post21', 'post1', 0, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted, post_time, updated_post_time) VALUES (28, 2, 'post22', 'post1', 0, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO QUESTION (id, writer_id , title, contents, count_of_answer, deleted, post_time, updated_post_time) VALUES (29, 2, 'post23', 'post1', 0, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);

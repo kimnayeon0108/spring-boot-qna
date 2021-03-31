@@ -1,6 +1,5 @@
 package com.codessquad.qna.web;
 
-import com.codessquad.qna.PageManager;
 import com.codessquad.qna.domain.Question;
 import com.codessquad.qna.domain.User;
 import com.codessquad.qna.service.QuestionService;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.codessquad.qna.web.HttpSessionUtils.*;
@@ -33,9 +33,40 @@ public class QuestionController {
     @GetMapping("/page/{pageNumber}")
     public String listByPage(Model model, @PathVariable("pageNumber") int currentPage) {
         Page<Question> page = questionService.getQuestionList(currentPage);
-        List<Question> pageContents = page.getContent();
-        model.addAttribute("questions", pageContents);
-        model.addAttribute("pages", PageManager.getPages());
+        List<Question> questions = page.getContent();
+        List<Integer> pageIndexes = new ArrayList<>();
+        int totalPages = page.getTotalPages();
+        int currentBlock = currentPage / 5;
+        if (currentPage % 5 == 0) {
+            currentBlock--;
+        }
+        for (int i = currentBlock * 5 + 1; i <= currentBlock * 5 + 5; i++) {
+            if (i > totalPages) break;
+            pageIndexes.add(i);
+        }
+
+        int prevBlock = currentBlock - 1;
+        int nextBlock = currentBlock + 1;
+        int totalBlocks = totalPages / 5;
+        if (prevBlock < 0) {
+            prevBlock = 0;
+        }
+        if (nextBlock > totalBlocks) {
+            nextBlock = totalBlocks;
+        }
+
+        if (currentBlock > 0) {
+            int prevPage = prevBlock * 5 + 1;
+            model.addAttribute("prevPage", prevPage);
+        }
+
+        if (currentBlock < totalBlocks) {
+            int nextPage = nextBlock * 5 + 1;
+            model.addAttribute("nextPage", nextPage);
+        }
+
+        model.addAttribute("pageIndexes", pageIndexes);
+        model.addAttribute("questions", questions);
         return "index";
     }
 
