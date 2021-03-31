@@ -71,5 +71,4 @@ public class Paginator {
         }
         return model;
     }
-
 }
